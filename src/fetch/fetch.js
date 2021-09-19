@@ -21,3 +21,5 @@ async function getData(url, responseType="json", catchCallback=(error)=>error.me
     }
     responseData.then(thenCallbacks).catch(catchCallback).finally(finallyCallback);
 }
+
+export { getData }

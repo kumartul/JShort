@@ -4,9 +4,10 @@ import { log, cclear, debug, cerror, cgrp, cinfo, cmem, ctbl, cwarn, ctime, ctim
 import { css } from './css/css.js';
 import { data } from './data/data.js';
 import { Stopwatch } from './delay_interval/stopwatch.js';
-import { countChildren, html, text, clone, insert, empty, remove } from './dom/dom.js';
+import { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings } from './dom/dom.js';
 import { error } from './error/error.js';
 import { on, off } from './event/events.js';
+import { getData } from './fetch/fetch.js';
 import { hasId, removeId, changeId, id } from './id/id.js';
 import { $ } from './selector/selector.js';
 import { Video } from './video/video.js';

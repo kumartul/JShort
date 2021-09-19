@@ -8,9 +8,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="container">
+        <div class="child"></div>
+    </div>
 </body>
 <script>
     console.log($(".container"));
+
+    con = document.querySelector('.container');
+    console.log(con.parentElement);
+
+    console.log();
+
+    function parents(element){
+    const parents = [];
+    for(let elementToInspect = element.parentElement; elementToInspect !== null; elementToInspect = elementToInspect.parentElement){
+        parents.push(elementToInspect);
+    }
+    console.log(parents);
+}
+
+parents(con);
+
+console.log($(".container").parents());
+console.log($(".container").siblings());
+
 </script>
 </html>

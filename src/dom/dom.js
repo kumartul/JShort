@@ -53,10 +53,74 @@ function remove(){
     parentElement.removeChild(this.element);
 }
 
-export { countChildren, html, text, clone, insert, empty, remove }
+// Function: Returns the parent of the element
+function parent(){
+    return this.element.parentElement;
+}
+
+// Function: Returns the parents of the element
+function parents(){
+    const parents = [];
+    for(let elementToInspect = this.element.parentElement; elementToInspect !== undefined; elementToInspect = elementToInspect.parentElement){
+        parents.push(elementToInspect);
+    }
+    return parents;
+}
+
+// Function: Returns all the siblings of the element
+function siblings(){
+    let siblings = [];
+    const parent = this.element.parentElement;
+
+    siblings = parent.children;
+    siblings = Array.from(siblings);
+    siblings = siblings.filter(elem => elem !== this.element);
+    
+    return siblings;
+}
+
+// Function: Returns the previous siblings of an element
+function prevSiblings(){
+    let siblings = [];
+    const parent = this.element.parentElement;
+
+    siblings = parent.children;
+    siblings = Array.from(siblings);
+    const indexOfCurrentElement = siblings.indexOf(this.element);
+
+    siblings = siblings.filter((elem, index) => index < indexOfCurrentElement);
+
+    return siblings;
+}
+
+// Function: Returns the next siblings of an element
+function nextSiblings(){
+    let siblings = [];
+    const parent = this.element.parentElement;
+
+    siblings = parent.children;
+    siblings = Array.from(siblings);
+    const indexOfCurrentElement = siblings.indexOf(this.element);
+
+    siblings = siblings.filter((elem, index) => index > indexOfCurrentElement);
+
+    return siblings;
+}
+
+
+
+
+
+
+export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings }
+
+
 
 
 // Tasks
 /*
 1. Allow a programmer to append or prepend multiple nodes at once
+2. Replace function
+3. moveForward function that will place the next element of the current element before the current element
+4. moveBackward function => reverse of moveForward
 */
