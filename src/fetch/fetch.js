@@ -18,6 +18,9 @@ async function getData(url, responseType="json", catchCallback=(error)=>error.me
         case "text":
             responseData = response.text();
             break;
+        default:
+            throw new TypeError("Failed to execute 'getData': Invalid response type")
+            break;
     }
     responseData.then(thenCallbacks).catch(catchCallback).finally(finallyCallback);
 }
