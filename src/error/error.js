@@ -1,5 +1,5 @@
 // Function: Throws an error
-function error(message){
+function error(message, errorType="Error"){
     // Throw an error if the message is a falsy value
     if(!message){
         throw new TypeError("Failed to execute 'error': Please provide a valid error message");
@@ -10,7 +10,29 @@ function error(message){
         throw new TypeError("Failed to execute: 'error': Error message must be a string");
     }
     else{
-        throw new Error(message);
+        switch(errorType.toLowerCase()){
+            case "error":
+                throw new Error(message);
+                break;
+            case "typeerror":
+                throw new TypeError(message);
+                break;
+            case "evalerror":
+                throw new EvalError(message);
+                break;
+            case "syntaxerror":
+                throw new SyntaxError(message);
+                break;
+            case "rangeerror":
+                throw new RangeError(message);
+                break;
+            case "referenceerror":
+                throw new ReferenceError(message);
+                break;
+            default:
+                throw new TypeError("Failed to execute 'error': Invalid error type");
+                break;
+        }
     }
 }
 
