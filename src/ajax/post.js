@@ -24,7 +24,7 @@ function post(obj){
                     obj.loaded(xhr.responseXML);
                 }
                 else{
-                    throw new Error("Failed to execute 'post': Invalid response type")
+                    throw new TypeError("Failed to execute 'post': Invalid response type")
                 }
             }
         }
@@ -34,7 +34,7 @@ function post(obj){
         xhr.send(obj.data);
     }
     else{
-        throw new Error("Failed to execute 'post': The argument must be an object");
+        throw new TypeError("Failed to execute 'post': The argument must be an object");
     }
 }
 

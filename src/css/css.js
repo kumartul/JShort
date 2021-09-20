@@ -12,3 +12,8 @@ function css(keyValueObj=null){
 }
 
 export { css }
+
+// Tasks
+/*
+1. Will not allow a programmer to add invalid CSS properties
+*/

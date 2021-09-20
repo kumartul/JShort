@@ -4,12 +4,12 @@ import { idRegex, classRegex, tagRegex, specialRegex } from './regex.js';
 function $(selector) {     
     // If selector is empty, then throw an error  
     if(!selector) {
-        throw new Error(`Failed to execute '$': The provided selector is empty`);
+        throw new TypeError(`Failed to execute '$': The provided selector is empty`);
     }
 
     // If selector is not a string, then throw an error
     if(typeof selector !== 'string') {
-        throw new Error(`Failed to execute: '$': The provided selector is not a string`);
+        throw new TypeError(`Failed to execute: '$': The provided selector is not a string`);
     }
 
     const jshortObj = {

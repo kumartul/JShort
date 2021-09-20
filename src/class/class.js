@@ -2,12 +2,12 @@
 function hasClass(className){
     // If the className is a falsy value, then throw an error
     if(!className){
-        throw new Error("Failed to execute 'hasClass': Please provide a valid class name");       
+        throw new ReferenceError("Failed to execute 'hasClass': Please provide a valid class name");       
     }
 
     // Throw an error if the class name is not a string
     if(typeof className !== 'string'){
-        throw new Error("Failed to execute 'hasClass': Class name must be a string");       
+        throw new TypeError("Failed to execute 'hasClass': Class name must be a string");       
     }
     
     if(this.element.classList.contains(className)){
@@ -38,7 +38,7 @@ function hasClasses(classNames=[]){
         }
     }
     else{
-        throw new Error("Failed to execute 'hasClasses': An array of class names must be passed")
+        throw new TypeError("Failed to execute 'hasClasses': An array of class names must be passed")
     }
 }
 
@@ -46,17 +46,17 @@ function hasClasses(classNames=[]){
 function removeClass(className){
     // Throw an error if the className is a falsy value
     if(!className){
-        throw new Error("Failed to execute 'removeClass': Please provide a valid class name");
+        throw new ReferenceError("Failed to execute 'removeClass': Please provide a valid class name");
     }
     
     // Throw an error if the class name is not a string
     if(typeof className !== 'string'){
-        throw new Error("Failed to execute 'removeClass': Class name must be a string");       
+        throw new TypeError("Failed to execute 'removeClass': Class name must be a string");       
     }
 
     // Throw an error if the className doesn't exists
     if(!(this.element.classList.contains(className))){
-        throw new Error(`Failed to execute 'removeClass': ${className} doesn't exists`);
+        throw new ReferenceError(`Failed to execute 'removeClass': ${className} doesn't exists`);
     }
     else{
         this.element.classList.remove(className);
@@ -72,12 +72,12 @@ function removeClasses(classNames=[]){
                 this.element.classList.remove(classNames[i]);
             }
             else{
-                throw new Error(`Failed to execute: 'removeClasses': The element doesn't contains a class named '${classNames[i]}'`);
+                throw new ReferenceError(`Failed to execute: 'removeClasses': The element doesn't contains a class named '${classNames[i]}'`);
             }
         }
     }
     else{
-        throw new Error("Failed to execute 'removeClasses': An array of class names must be passed")
+        throw new TypeError("Failed to execute 'removeClasses': An array of class names must be passed")
     }
 }
 
@@ -85,17 +85,17 @@ function removeClasses(classNames=[]){
 function addClass(className){
     // Throw an error if the class is a falsy value
     if(!className){
-        throw new Error("Failed to execute 'addClass': Please provide a valid class name");
+        throw new TypeError("Failed to execute 'addClass': Please provide a valid class name");
     }
 
     // Throw an error if the class name is not a string
     if(typeof className !== 'string'){
-        throw new Error("Failed to execute 'addClass': Class name must be a string");       
+        throw new TypeError("Failed to execute 'addClass': Class name must be a string");       
     }
 
     // If the class already exists, then throw an error
     if(this.element.classList.contains(className)){
-        throw new Error(`Failed to execute 'addClass': ${className} already exists`)
+        throw new ReferenceError(`Failed to execute 'addClass': ${className} already exists`)
     }
     else{
         this.element.classList.add(className);
@@ -111,12 +111,12 @@ function addClasses(classNames){
                 this.element.classList.add(classNames[i]);
             }
             else{
-                throw new Error(`Failed to execute 'addClasses': ${classNames[i]} is not a valid class name`)
+                throw new TypeError(`Failed to execute 'addClasses': ${classNames[i]} is not a valid class name`)
             }
         }
     }
     else{
-        throw new Error("Failed to execute 'addClasses': An array of class names must be passed")
+        throw new TypeError("Failed to execute 'addClasses': An array of class names must be passed")
     }
 }
 

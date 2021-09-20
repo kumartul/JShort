@@ -123,4 +123,6 @@ export { countChildren, html, text, clone, insert, empty, remove, parent, parent
 2. Replace function
 3. moveForward function that will place the next element of the current element before the current element
 4. moveBackward function => reverse of moveForward
+5. instantiate function that will allow a programmer to generate an element and place it anywhere 
+   in the document
 */

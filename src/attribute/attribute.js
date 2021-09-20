@@ -19,7 +19,7 @@ function attr(attribute = null, value = null) {
     }
     // If the attribute and value are not string, then throw an error
     else if(typeof attribute !== 'string' && typeof value !== 'string') {
-        throw new Error("Failed to execute: 'attr': The attribute and value must be a string");
+        throw new TypeError("Failed to execute: 'attr': The attribute and value must be a string");
     }
     // If an attribute is passed, then return the corresponding value
     else if(attribute && !value) {
@@ -35,7 +35,7 @@ function attr(attribute = null, value = null) {
 function hasAttr(attribute) {
     if(!attribute) {
         // Throw an error if the attribute is a falsy value
-        throw new Error("Failed to execute: 'hasAttr': Please provide a valid attribute");
+        throw new TypeError("Failed to execute: 'hasAttr': Please provide a valid attribute");
     }
     else {
         return this.element.hasAttribute(attribute);
@@ -46,7 +46,7 @@ function hasAttr(attribute) {
 function removeAttr(attribute) {
     if(!attribute) {
         // Throw an error if the attribute is a falsy value
-        throw new Error("Failed to execute 'removeAttr': Please provide a valid attribute");
+        throw new TypeError("Failed to execute 'removeAttr': Please provide a valid attribute");
     }
     else {
         if(this.element.hasAttribute(attribute)) {
@@ -54,7 +54,7 @@ function removeAttr(attribute) {
         }
         else {
             // Throw an error if the attribute is not present in the element
-            throw new Error(`Failed to execute 'removeAttr': ${attribute} is not an attribute of ${this.element}`)
+            throw new ReferenceError(`Failed to execute 'removeAttr': ${attribute} is not an attribute of ${this.element}`)
         }
     }
 }

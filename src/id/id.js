@@ -2,12 +2,12 @@
 function hasId(id){
     // Throw an error if the id is a falsy value
     if(!id){
-        throw new Error("Failed to execute 'hasId': Please provide a valid id name");
+        throw new TypeError("Failed to execute 'hasId': Please provide a valid id name");
     }
 
     // Throw an error if the id name is not a string
     if(typeof id !== 'string'){
-        throw new Error("Failed to execute 'hasId': Id name must be a string");       
+        throw new TypeError("Failed to execute 'hasId': Id name must be a string");       
     }
     
     if(this.element.id === id){
@@ -27,12 +27,12 @@ function removeId(){
 function changeId(id){
     // Throw an error if the id is a falsy value
     if(!id){
-        throw new Error("Failed to execute 'changeId': Please provide a valid id name");
+        throw new TypeError("Failed to execute 'changeId': Please provide a valid id name");
     }
 
     // Throw an error if the id name is not a string
     if(typeof id !== 'string'){
-        throw new Error("Failed to execute 'changeId': Id name must be a string");       
+        throw new TypeError("Failed to execute 'changeId': Id name must be a string");       
     }
     else{
         this.element.id = id;

@@ -24,14 +24,14 @@ function get(obj){
                     obj.loaded(xhr.responseXML);
                 }
                 else{
-                    throw new Error("Failed to execute 'get': Invalid response type")
+                    throw new TypeError("Failed to execute 'get': Invalid response type")
                 }
             }
         }
         xhr.send();
     }
     else{
-        throw new Error("Failed to execute 'get': The argument must be an object");
+        throw new TypeError("Failed to execute 'get': The argument must be an object");
     }
 }
 
