@@ -144,6 +144,11 @@ function before(isElement=true){
 }
 
 // Function: Returns the element after the target element
+/*
+1. If the argument is true, then the next element is returned
+2. If the argument is false, then the next node is returned
+3. If the argument is not a boolean, then error is thrown
+*/
 function after(isElement=true){
     if(typeof isElement !== "boolean"){
         throw new TypeError("Failed to execute 'after': The argument must be a boolean")
@@ -157,6 +162,8 @@ function after(isElement=true){
         }
     }
 }
+
+
 
 
 export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before, after }
