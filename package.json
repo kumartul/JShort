@@ -1,6 +1,6 @@
 {
   "name": "jshort",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "description": "A lightweight JavaScript library to write JavaScript in an easy way",
   "main": "./src/jshort.js",
   "directories": {
