@@ -143,8 +143,23 @@ function before(isElement=true){
     }
 }
 
+// Function: Returns the element after the target element
+function after(isElement=true){
+    if(typeof isElement !== "boolean"){
+        throw new TypeError("Failed to execute 'after': The argument must be a boolean")
+    }
+    else{
+        if(isElement){
+            return this.element.nextElementSibling;
+        }
+        else{
+            return this.element.nextSibling;
+        }
+    }
+}
 
-export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before }
+
+export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before, after }
 
 
 
