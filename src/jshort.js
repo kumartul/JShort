@@ -12,5 +12,6 @@ import { error } from './error/error.js';
 import { on, off } from './event/events.js';
 import { getData } from './fetch/fetch.js';
 import { hasId, removeId, changeId, id } from './id/id.js';
+import { isInt, isBool, isStr, isDecimal, isObj, isFunc, isSym, isUndefined, isNull, isArray } from './is_functions/is.js';
 import { $ } from './selector/selector.js';
 import { Video } from './video/video.js';
