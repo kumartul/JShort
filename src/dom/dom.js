@@ -107,12 +107,44 @@ function nextSiblings(){
     return siblings;
 }
 
+// Function: Returns the position of an HTMLElement
+function position(element=this){
+    return {
+        x: element.getBoundingClientRect().x,
+        y: element.getBoundingClientRect().y
+    }
+}
+
+// Function: Returns the scale of an HTMLElement
+function scale(element=this){
+    return {
+        x: element.getBoundingClientRect().width,
+        y: element.getBoundingClientRect().height
+    }
+}
+
+// Function: Returns the element before the target element
+/*
+1. If the argument is true, then the previous element is returned
+2. If the argument is false, then the previous node is returned
+3. If the argument is not a boolean, then error is thrown
+*/
+function before(isElement=true){
+    if(typeof isElement !== "boolean"){
+        throw new TypeError("Failed to execute 'before': The argument must be a boolean")
+    }
+    else{
+        if(isElement){
+            return this.element.previousElementSibling;
+        }
+        else{
+            return this.element.previousSibling;
+        }
+    }
+}
 
 
-
-
-
-export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings }
+export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before }
 
 
 
