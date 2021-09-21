@@ -1,6 +1,6 @@
 import { get } from './ajax/get.js';
 import { post } from './ajax/post.js';
-import { hide, show, blink, move } from './animation/animation.js';
+import { hide, show, blink, move, grow, shrink, shrinkAndGrow, rotate } from './animation/animation.js';
 import { attr, hasAttr, removeAttr } from './attribute/attribute.js';
 import { hasClass, hasClasses, removeClass, removeClasses, addClass, addClasses, classes } from './class/class.js';
 import { log, cclear, debug, cerror, cgrp, cinfo, cmem, ctbl, cwarn, ctime, ctimend, ctrc } from './console/console.js';
