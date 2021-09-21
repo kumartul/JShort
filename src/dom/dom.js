@@ -163,20 +163,43 @@ function after(isElement=true){
     }
 }
 
+// Function: Instantiates a node
+function instantiate(typeOfNode, properties={}, attributes={}){
+    const newNode = document.createElement(typeOfNode);
+
+    if(typeof properties === 'object'){
+        const keys = Object.keys(properties);
+        for(let i = 0; i < keys.length; i++){
+            newNode.style[keys[i]] = properties[keys[i]];
+        }
+    }
+    else{
+        throw new TypeError("Failed to execute 'instantiate': The properties must be an object")
+    }
+
+    if(typeof attributes === 'object'){
+        const attributeKeys = Object.keys(attributes);
+        for(let i = 0; i < attributeKeys.length; i++){
+            newNode.setAttribute(attributeKeys[i], attributes[attributeKeys[i]]);
+        }
+    }
+    else{
+        throw new TypeError("Failed to execute 'instantiate': The attributes must be an object")
+    }
+
+    document.querySelector('body').appendChild(newNode);
+}
 
 
-
-export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before, after }
+export { countChildren, html, text, clone, insert, empty, remove, parent, parents, siblings, prevSiblings, nextSiblings, position, scale, before, after, instantiate }
 
 
 
 
 // Tasks
 /*
-1. Allow a programmer to append or prepend multiple nodes at once
-2. Replace function
-3. moveForward function that will place the next element of the current element before the current element
-4. moveBackward function => reverse of moveForward
-5. instantiate function that will allow a programmer to generate an element and place it anywhere 
-   in the document
+1. Replace function
+2. moveForward function that will place the next element of the current element before the current element
+3. moveBackward function => reverse of moveForward
+4. Allow the programmer to instantiate the node at a specific position
 */
