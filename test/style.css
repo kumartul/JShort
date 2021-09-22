@@ -18,4 +18,21 @@ body{
     background: #0082e6;
     height: 15rem;
     width: 15rem;
+    padding: 3.75rem;
+    /* opacity: 0; */
+    /* transform: scale(1, 1) */
+    /* transform: rotate(90deg);
+    transition: all 0.5s; */
+}
+.child{
+    height: 7.5rem;
+    width: 7.5rem;
+    background: red;
+}
+.test{
+    height: 10rem;
+    width: 10rem;
+    background: green;
+    /* transform: ; */
+    /* transition-duration: ; */
 }
