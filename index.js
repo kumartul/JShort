@@ -28,6 +28,7 @@ function $(selector) {
 
     const jshortObj = {
         element: document.querySelector(selector),
+        $: $,
         hide: hide,
         show: show,
         blink: blink,
