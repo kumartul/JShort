@@ -2,3 +2,4 @@
 ./test/jquery.html
 node_modules
 /test
+package-lock.json
