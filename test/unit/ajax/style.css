@@ -1,0 +1,29 @@
+button{
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 1rem;
+}
+button:hover{
+    opacity: 0.7;
+    transition: 0.5s;
+}
+#get{
+    background: #0082e6;
+}
+#post{
+    background: rgb(102, 204, 102);
+}
+#response{
+    border: 2px solid black;
+    min-height: 50rem;
+    max-width: 90vw;
+    margin: auto;
+}
+#response h1{
+    margin: 1rem;
+}

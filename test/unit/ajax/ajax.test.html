@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <link rel="stylesheet" type = "text/css" href="../../skeleton.css">
+    <link rel="stylesheet" type = "text/css" href="./style.css">
+</head>
+<body>
+    <button id = "get">Get</button>
+    <button id="post">Post</button>
+</body>
+<script type = "module">
+
+import { get, post } from '../../../index.js';
+import { $ } from '../../../index.js';
+
+// Success
+$("#get").on(['click'], () => {
+    get({
+        url: "https://jsonplaceholder.typicode.com/todos",
+        loading: () => {
+            console.log("Loading...");
+        },
+        responseType: "text",
+        loaded: (response) => {
+            console.log("Loaded...");
+            console.log(response);
+        }
+    });
+});
+// Credits: https://jsonplaceholder.typicode.com
+
+// Success
+$("#post").on(['click'], () => {
+    post({
+        url: "http://dummy.restapiexample.com/api/v1/create",
+        loading: () => {
+            console.log("Loading...");
+        },
+        loaded: (response) => {
+            console.log("Loaded...");
+            console.log(response);
+        },
+        responseType: "text",
+        headers: {
+            name: "Content-type",
+            value: "application/x-www-form-urlencoded"
+        },
+        data: {
+            "name": "kldfdjflkadjslfj",
+            "salary": 239323440,
+            "age": 89
+        }
+    });
+});
+// Credits: https://dummy.restapiexample.com
+
+</script>
+</html>
