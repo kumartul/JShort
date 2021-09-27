@@ -1,5 +1,6 @@
-*.log
-./test/jquery.html
+# Directories
 node_modules
-/test
+
+# Files
+*.log
 package-lock.json
