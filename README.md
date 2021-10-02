@@ -36,3 +36,5 @@ import $ from './jshort.js';
 - Setup a video using just one line of code 🤯
 
 **Note:** I will try to release the documentation very soon, so stay awaited... 🎉
+
+---
