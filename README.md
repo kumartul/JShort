@@ -35,6 +35,8 @@ import $ from './jshort.js';
 - Fetch data from any source using one line of code only 🤯
 - Setup a video using just one line of code 🤯
 
+### Currently, testing is in progress!
+
 **Note:** I will try to release the documentation and v1.0.0 of jShort very soon, so stay awaited... 🎉
 
 ---
