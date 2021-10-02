@@ -15,7 +15,7 @@ import { hasId, removeId, changeId, id } from './src/id/id.js';
 import { isInt, isBool, isStr, isDecimal, isObj, isFunc, isSym, isUndefined, isNull, isArray } from './src/is_functions/is.js';
 import { Video } from './src/video/video.js';
 
-function $(selector) {     
+export default function $(selector) {     
     // If selector is empty, then throw an error  
     if(!selector) {
         throw new TypeError(`Failed to execute '$': The provided selector is empty`);
